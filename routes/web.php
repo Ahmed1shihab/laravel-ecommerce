@@ -56,15 +56,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard/my-orders/{order}', [OrdersController::class, 'show'])->name('orders.show');
 });
 
-Route::get('/errors', function () {
-    // session()->flash('errors', 'error1');
-    // session()->flash('errors', 'error2');
-    return redirect('/')->withErrors('Errors');
-});
-
-
 require __DIR__.'/auth.php';
-
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
