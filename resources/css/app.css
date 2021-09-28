@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap");
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.hero-img {
+    @apply w-full h-60 md:h-96 object-cover mt-4 px-4 opacity-0 absolute -top-4 transition ease-in-out duration-500;
+}
+
+img.active {
+    @apply opacity-100 static;
+}
+
+#image-pagination span {
+    @apply bg-cgray;
+}
+
+#image-pagination span.active {
+    @apply bg-dblue;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
