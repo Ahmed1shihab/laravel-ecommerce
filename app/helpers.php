@@ -4,8 +4,7 @@ use Carbon\Carbon;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 function presentPrice($price) {
-    $formatter = new \NumberFormatter('en_US', \NumberFormatter::CURRENCY);
-    return $formatter->formatCurrency($price / 100, 'USD');
+    return '$'.number_format($price / 100, 2);
 }
 
 function presentDate($date) {
