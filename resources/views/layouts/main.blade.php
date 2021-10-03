@@ -46,7 +46,7 @@
         }
     </style>
 </head>
-<body class="font-body bg-sky overflow-x-hidden relative">
+<body class="font-body bg-sky overflow-x-hidden">
     <header
             class="
                 text-dblue
@@ -168,7 +168,7 @@
     @yield('content')
 
     {{-- Footer --}}
-    <footer class="mt-10 absolute left-0 right-0 bottom-0">
+    <footer class="mt-10">
         <div
             class="
                 bg-dblue
