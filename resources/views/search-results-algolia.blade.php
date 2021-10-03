@@ -98,7 +98,6 @@
 
                 <div id="stats-container" class="mb-7"></div>
 
-                <h2>Categories</h2>
                 <div id="refinement-list">
                     <!-- RefinementList widget will appear here -->
                 </div>

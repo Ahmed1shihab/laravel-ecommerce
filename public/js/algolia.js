@@ -20,7 +20,7 @@
                     const markup = `
                         <div class="algolia-result">
                             <span>
-                                <img src="${window.location.origin}/storage/${
+                                <img src="${window.location.origin}/images/${
                         suggestion.image
                     }" alt="img" class="algolia-thumb">
                                 ${suggestion._highlightResult.name.value}
