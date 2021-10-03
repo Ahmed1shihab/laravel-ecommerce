@@ -55,7 +55,7 @@
                         <div class="flex flex-col md:flex-row pt-1.5 pb-3.5 justify-between items-center mt-4 bg-white shadow">
         
                             <div class="flex flex-col md:flex-row text-center md:text-left justify-between items-center">
-                                <img src="{{ asset('storage/' . $item->model->image) }}" alt="prodcut" width="150" style="max-height: 200px; object-fit: contain; padding: 3px;">
+                                <img src="{{ asset('images/' . $item->model->image) }}" alt="prodcut" width="150" style="max-height: 200px; object-fit: contain; padding: 3px;">
         
                                 <div class="flex flex-col justify-between ml-0 mt-1.5 md:mt-0 md:ml-4">
                                     <p class="font-semibold">{{ $item->name }}</p>

@@ -23,7 +23,7 @@
                                 <td class="flex md:flex-row flex-col mt-5 mb-3 pl-5">
                                     <div class="bg-white shadow-md md:w-auto w-36">
                                         <a href="{{ route('shop.show', ['slug' => $item->model->slug]) }}">
-                                            <img src="{{ asset('storage/' . $item->model->image) }}" alt="product" width="250" style="max-height: 300px; object-fit: contain; padding: 5px;">
+                                            <img src="{{ asset('images/' . $item->model->image) }}" alt="product" width="250" style="max-height: 300px; object-fit: contain; padding: 5px;">
                                         </a>
                                     </div>
                                     <div class="flex flex-col md:text-xl text-base mt-7 md:ml-5">
@@ -152,7 +152,7 @@
                                 <td class="flex flex-row mt-5 mb-3 pl-5">
                                     <div class="bg-white shadow-md">
                                         <a href="{{ route('shop.show', $item->model->slug) }}">
-                                            <img src="{{ asset('storage/' . $item->model->image) }}" alt="product" width="250" style="max-height: 300px; object-fit: contain; padding: 5px">
+                                            <img src="{{ asset('images/' . $item->model->image) }}" alt="product" width="250" style="max-height: 300px; object-fit: contain; padding: 5px">
                                         </a>
                                     </div>
                                     <div class="flex flex-col text-xl mt-7 ml-5">

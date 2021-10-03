@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="box-border">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,8 +46,7 @@
         }
     </style>
 </head>
-<body class="font-body bg-sky overflow-x-hidden">
-    {{-- padding: 15px --}}
+<body class="font-body bg-sky overflow-x-hidden relative">
     <header
             class="
                 text-dblue
@@ -62,7 +61,6 @@
             "
         >
         <!-- Logo -->
-        {{-- width: 180px; margin-right: 15px; --}}
         <a href="/" class="md:w-56 relative z-50">
             <img
                 src="{{ asset('images/logo.svg') }}"
@@ -170,7 +168,7 @@
     @yield('content')
 
     {{-- Footer --}}
-    <footer class="mt-10">
+    <footer class="mt-10 absolute left-0 right-0 bottom-0">
         <div
             class="
                 bg-dblue

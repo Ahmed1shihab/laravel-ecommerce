@@ -46,7 +46,7 @@
                         @foreach ($products as $product)
                             <div style="display: flex; align-items: center; padding: 10px; margin-top: 10px; background: white; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
                                 <p style="margin-right: 15px; color: black; font-size: 16px">{{ $product->name }}</p>
-                                <img src="{{ asset('storage/' . $product->image) }}" alt="Product Image" style="max-width: 150px; max-height: 200px; object-fit: contain; border-left: 1px solid rgb(187, 184, 184); padding-left: 5px;">
+                                <img src="{{ asset('images/' . $product->image) }}" alt="Product Image" style="max-width: 150px; max-height: 200px; object-fit: contain; border-left: 1px solid rgb(187, 184, 184); padding-left: 5px;">
                             </div>
                         @endforeach
                     </div>

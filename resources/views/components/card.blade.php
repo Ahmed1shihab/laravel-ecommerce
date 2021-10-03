@@ -6,7 +6,7 @@
             <div class="flex justify-center">
                 <a href="{{ route('shop.show', ['slug' => $product->slug]) }}">
                     <img
-                        src="{{ asset('storage/' . $product->image) }}"
+                        src="{{ asset('images/' . $product->image) }}"
                         alt="{{ $product->name }}"
                         width="250"
                         class="object-contain"
