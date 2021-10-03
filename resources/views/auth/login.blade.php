@@ -12,6 +12,29 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
+        <div class="mb-2">
+            <p>You Can Log in Only In demo version 😓</p>
+            <div class="ml-2.5 mt-1">
+                <p>some accounts you can log in within</p>
+                <ul class="list-disc ml-5 mt-1">
+                    <li>
+                        <div>Normal User</div>
+                        <div class="font-mono">
+                            <p>Email: user@iq.com</p>
+                            <p>Password: password</p>
+                        </div>
+                    </li>
+                    <li class="mt-1">
+                        <div>User Can <span class="font-bold">Browse</span> Admin Panel</div>
+                        <div class="font-mono">
+                            <p>Email: user_admin@iq.com</p>
+                            <p>Password: password</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         <form method="POST" action="{{ route('login') }}">
             @csrf
 

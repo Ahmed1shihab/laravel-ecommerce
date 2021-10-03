@@ -96,8 +96,8 @@
 
         <div class="flex items-center gap-x-2.5 md:gap-x-0 text-base md:text-lg">
             @guest
-                <a href="{{ route('register') }}" class="hover:underline ml-0 sm:ml-16 md:ml-0 ">
-                    Sign up
+                <a href="{{ route('login') }}" class="hover:underline ml-0 sm:ml-16 md:ml-0 ">
+                    Log in
                 </a>
             @else
                 <a href="{{ route('dashboard') }}" class="hover:underline ml-0 xl:ml-20 sm:ml-16">
