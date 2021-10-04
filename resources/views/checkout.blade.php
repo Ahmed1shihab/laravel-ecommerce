@@ -3,7 +3,7 @@
 @section('title', 'Checkout')
 
 @section('content')
-    <div class="md:mx-16 mx-10">
+    <div class="md:mx-16 mx-8">
         <div class="grid md:grid-cols-2 gap-8 mt-5">
             <div>
                 <h1 class="text-2xl font-semibold text-dblue">Billing Details</h1>
@@ -48,7 +48,8 @@
                     </form>
                 </div>
             </div>
-            <div>
+
+            <div class="flex flex-col justify-center items-center md:block">
                 <h1 class="text-2xl font-semibold text-dblue">Your Order</h1>
                 <div class="flex flex-col justify-center w-11/12">
                     @foreach (Cart::instance('default')->content() as $item)
@@ -59,7 +60,7 @@
         
                                 <div class="flex flex-col justify-between ml-0 mt-1.5 md:mt-0 md:ml-4">
                                     <p class="font-semibold">{{ $item->name }}</p>
-                                    <p class="text-sm mt-1.5">{{ \Illuminate\Support\Str::limit($item->model->details, 50) }}</p>
+                                    <p class="text-sm mt-1.5 px-1">{{ \Illuminate\Support\Str::limit($item->model->details, 50) }}</p>
                                     <p class="text-sm mt-1.5">{{ presentPrice($item->price) }}</p>
                                 </div>
                             </div>
@@ -71,7 +72,7 @@
                         </div>
                     @endforeach
 
-                    <div class="flex flex-col justify-between bg-white text-dblue rounded p-4 shadow-md mt-5">
+                    <div class="flex flex-col justify-between bg-white text-dblue rounded p-4 shadow-md mt-5 w-full">
                         <div class="flex justify-between items-center border-b border-cgray mb-3 pb-2">
                             <p>Subtotal</p>
                             <p>{{ presentPrice(Cart::subtotal()) }}</p>

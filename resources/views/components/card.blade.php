@@ -2,7 +2,7 @@
 
 <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-2.5 2xl:gap-x-0 2xl:grid-cols-4 justify-items-center {{$margin}}">
     @forelse ($cardItems as $product)
-        <div class="flex flex-col justify-between content-center bg-white rounded shadow hover:shadow-lg transition-shadow p-5" style="min-width: 20rem">
+        <div class="flex flex-col justify-between content-center bg-white rounded shadow hover:shadow-lg transition-shadow p-5" style="max-width: 20rem">
             <div class="flex justify-center">
                 <a href="{{ route('shop.show', ['slug' => $product->slug]) }}">
                     <img
@@ -29,8 +29,8 @@
             </div>
 
             <!-- STARS -->
-            <div class="mt-6 flex items-center justify-center">
-                {{-- <div class="flex">
+            <div class="mt-6 flex items-center justify-between">
+                <div class="flex">
                     @for ($i = 0; $i < 5; $i++)
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@
                             />
                         </svg>
                     @endfor
-                </div> --}}
+                </div>
                 {{-- <a href="{{ route('cart.store', $product->slug) }}" class="bg-dblue text-white text-sm font-light rounded-md p-2 hover:bg-gray-800 transition duration-300">More Details 🧾</a> --}}
 
                 {{-- <form action="{{ route('cart.store') }}" method="POST" id="add-to-cart">

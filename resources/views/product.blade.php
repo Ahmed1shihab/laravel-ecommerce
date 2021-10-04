@@ -3,7 +3,7 @@
 @section('title', $product->name)
 
 @section('content')
-    <div class="mx-16">
+    <div class="mx-8 md:mx-16">
         <div class="flex flex-col md:flex-row mt-10">
             <div class="bg-white shadow-lg flex-shrink-0 flex justify-center items-center">
                 <img src="{{ asset('images/' . $product->image) }}" alt="product" width="390" class="object-contain p-1.5" style="max-height: 400px">

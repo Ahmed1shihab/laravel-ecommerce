@@ -21,7 +21,7 @@
                         @foreach (Cart::instance('default')->content() as $item)
                             <tr class="flex flex-col justify-center items-center md:table-row border-b border-cgray">
                                 <td class="flex items-center md:items-start md:flex-row flex-col mt-5 mb-3 md:pl-5">
-                                    <div class="bg-white shadow-md md:w-auto w-36">
+                                    <div class="bg-white shadow-md">
                                         <a href="{{ route('shop.show', ['slug' => $item->model->slug]) }}">
                                             <img src="{{ asset('images/' . $item->model->image) }}" alt="product" width="250" style="max-height: 300px; object-fit: contain; padding: 5px;" loading="lazy">
                                         </a>
@@ -38,7 +38,7 @@
                                         @endfor
                                     </select>
                                 </td>
-                                <td class="text-center my-5 md:my-0 text-sm md:text-base">
+                                <td class="text-center my-5 md:my-0 text-base">
                                     {{ presentPrice($item->subtotal) }}
                                 </td>
                                 <td class="flex items-center justify-center gap-x-2.5 md:table-cell">
@@ -112,7 +112,7 @@
                     @if (! session()->has('coupon'))
                         <div class="flex flex-col items-center mr-0 md:mr-4 md:block">
                             <p>Add A Copoun 🤓</p>
-                            <form action="{{ route('coupon.store') }}" method="POST" class="mt-1.5">
+                            <form action="{{ route('coupon.store') }}" method="POST" class="mt-1.5 flex">
                                 {{ csrf_field() }}
                                 
                                 <input type="text" name="code" class="rounded border-r-0 text-sm w-40 md:w-auto">
@@ -123,7 +123,7 @@
                     @else
                         <div></div>
                     @endif
-                    <a href="{{ route('checkout.index') }}" class="bg-dblue text-white rounded text-sm md:text-base p-3 hover:scale-105 transform transition-transform">
+                    <a href="{{ route('checkout.index') }}" class="bg-dblue text-white text-center rounded text-sm md:text-base p-3 hover:scale-105 transform transition-transform">
                         Process To Checkout
                     </a>
                 </div>
@@ -147,27 +147,27 @@
                             <td></td>
                         </tr>
                     </thead>
-                    <tbody class="border-b border-cgray">
+                    <tbody class="flex flex-col items-center justify-center md:table-row-group border-b border-cgray">
                         @foreach (Cart::instance('saveForLater')->content() as $item)
-                            <tr class="border-b border-cgray">
-                                <td class="flex flex-row mt-5 mb-3 pl-5">
+                            <tr class="flex flex-col items-center md:table-row border-b border-cgray">
+                                <td class="flex flex-col items-center md:items-start md:flex-row mt-5 mb-3 md:pl-5">
                                     <div class="bg-white shadow-md">
                                         <a href="{{ route('shop.show', $item->model->slug) }}">
                                             <img src="{{ asset('images/' . $item->model->image) }}" alt="product" width="250" style="max-height: 300px; object-fit: contain; padding: 5px" loading="lazy">
                                         </a>
                                     </div>
-                                    <div class="flex flex-col text-xl mt-7 ml-5">
+                                    <div class="flex flex-col text-xl mt-7 md:ml-5">
                                         <a href="{{ route('shop.show', $item->model->slug) }}" class="hover:underline">{{ $item->name }}</a>
                                         <span class="mt-3 text-base">{{ presentPrice($item->price) }}</span>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="flex items-center md:table-cell">
                                     <form action="{{ route('saveForLater.destroy', $item->rowId) }}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
                                         
                                         <button type="submit">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 hover:bg-gray-400 hover:bg-opacity-20 transition duration-300 rounded-full p-1.5 ml-4 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 hover:bg-gray-400 hover:bg-opacity-20 transition duration-300 rounded-full p-1.5 md:ml-4 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                             </svg>
                                         </button>
@@ -176,7 +176,7 @@
                                         {{ csrf_field() }}
 
                                         <button type="submit">
-                                            <img src="{{ asset('images/add-to-cart.svg') }}" alt="icon" class="h-10 w-10 mt-3 hover:bg-gray-400 hover:bg-opacity-20 transition duration-300 rounded-full p-1.5 ml-4 cursor-pointer">
+                                            <img src="{{ asset('images/add-to-cart.svg') }}" alt="icon" class="h-10 w-10 md:mt-3 hover:bg-gray-400 hover:bg-opacity-20 transition duration-300 rounded-full p-1.5 md:ml-4 cursor-pointer">
                                         </button>
                                     </form>
                                 </td>
