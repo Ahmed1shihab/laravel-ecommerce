@@ -41,7 +41,7 @@
                                 <td class="text-center my-5 md:my-0 text-sm md:text-base">
                                     {{ presentPrice($item->subtotal) }}
                                 </td>
-                                <td class="flex items-center justify-center md:table-cell">
+                                <td class="flex items-center justify-center gap-x-2.5 md:table-cell">
                                     <!-- Delete Item From Cart -->
                                     <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
                                         {{ csrf_field() }}
