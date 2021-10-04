@@ -10,16 +10,19 @@
                 src="{{ asset('images/laptop.jpg') }}"
                 alt="product"
                 class="hero-img active"
+                loading="lazy"
             />
             <img
                 src="{{ asset('images/watch.jpg') }}"
                 alt="product"
                 class="hero-img"
+                loading="lazy"
             />
             <img
                 src="{{ asset('images/camera.jpg') }}"
                 alt="product"
                 class="hero-img"
+                loading="lazy"
             />
             <div class="w-full absolute top-1/2 transform -translate-y-1/2 flex items-center justify-between px-6">
                 <div class="bg-dblue text-white shadow-md rounded-full cursor-pointer p-2 text-center" id="previous-btn">

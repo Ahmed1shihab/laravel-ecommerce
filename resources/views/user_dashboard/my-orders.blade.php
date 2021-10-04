@@ -39,7 +39,7 @@
                             @foreach ($order->products as $product)
                                 <div class="flex items-center border-b-2 border-gray-200">
                                     <div class="bg-white border-r-2 border-gray-200">
-                                        <img src="{{ asset('images/' . $product->image) }}" alt="" class="w-80 object-contain p-3" style="max-height: 320px">
+                                        <img src="{{ asset('images/' . $product->image) }}" alt="" class="w-80 object-contain p-3" style="max-height: 320px" loading="lazy">
                                     </div>
                                     <div class="ml-10 text-lg">
                                         <a href="{{ route('shop.show', $product->slug) }}" class="hover:underline font-semibold text-xl">{{ $product->name }}</a>

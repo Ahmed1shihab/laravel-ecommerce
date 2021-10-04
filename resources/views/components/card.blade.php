@@ -11,6 +11,7 @@
                         width="250"
                         class="object-contain"
                         style="height: 200px;"
+                        loading="lazy"
                     />
                 </a>
             </div>

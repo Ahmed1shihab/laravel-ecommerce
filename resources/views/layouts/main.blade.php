@@ -66,6 +66,7 @@
                 src="{{ asset('images/logo.svg') }}"
                 alt="Ecommerce Logo"
                 class="w-36 sm:w-auto md:w-52 lg:w-auto"
+                loading="lazy"
             />
         </a>
 
