@@ -2,7 +2,7 @@
 
 <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-2.5 2xl:gap-x-0 2xl:grid-cols-4 justify-items-center {{$margin}}">
     @forelse ($cardItems as $product)
-        <div class="flex flex-col justify-between content-center bg-white rounded shadow hover:shadow-lg transition-shadow p-5" style="max-width: 20rem">
+        <div class="flex flex-col justify-between content-center bg-white rounded shadow hover:shadow-lg transition-shadow p-5" style="min-width: 20rem">
             <div class="flex justify-center">
                 <a href="{{ route('shop.show', ['slug' => $product->slug]) }}">
                     <img

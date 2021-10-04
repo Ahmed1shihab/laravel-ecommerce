@@ -9,7 +9,7 @@
         <div class="mt-8">
             @if (Cart::instance('default')->count() > 0)
                 <table class="w-full text-dblue">
-                    <thead class="border-b-2 border-dblue text-sm font-normal md:font-bold md:text-lg">
+                    <thead class="hidden md:table-header-group border-b-2 border-dblue text-sm font-normal md:font-bold md:text-lg">
                         <tr class="text-center">
                             <td>Product</td>
                             <td>Quantity</td>
@@ -19,14 +19,14 @@
                     </thead>
                     <tbody>
                         @foreach (Cart::instance('default')->content() as $item)
-                            <tr class="border-b border-cgray">
-                                <td class="flex md:flex-row flex-col mt-5 mb-3 pl-5">
+                            <tr class="flex flex-col justify-center items-center md:table-row border-b border-cgray">
+                                <td class="flex items-center md:items-start md:flex-row flex-col mt-5 mb-3 md:pl-5">
                                     <div class="bg-white shadow-md md:w-auto w-36">
                                         <a href="{{ route('shop.show', ['slug' => $item->model->slug]) }}">
                                             <img src="{{ asset('images/' . $item->model->image) }}" alt="product" width="250" style="max-height: 300px; object-fit: contain; padding: 5px;" loading="lazy">
                                         </a>
                                     </div>
-                                    <div class="flex flex-col md:text-xl text-base mt-7 md:ml-5">
+                                    <div class="flex items-center md:items-start flex-col md:text-xl text-base mt-7 md:ml-5">
                                         <a href="{{ route('shop.show', ['slug' => $item->model->slug]) }}" class="hover:underline">{{ $item->name }}</a>
                                         <span class="mt-3 text-base">{{ presentPrice($item->price) }}</span>
                                     </div>
@@ -38,27 +38,28 @@
                                         @endfor
                                     </select>
                                 </td>
-                                <td class="text-center text-sm md:text-base">
+                                <td class="text-center my-5 md:my-0 text-sm md:text-base">
                                     {{ presentPrice($item->subtotal) }}
                                 </td>
-                                <td>
-                                    <!--Delete Item From Cart  -->
+                                <td class="flex items-center justify-center md:table-cell">
+                                    <!-- Delete Item From Cart -->
                                     <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
 
                                         <button type="submit">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-9 md:w-9 h-7 w-7 hover:bg-gray-400 hover:bg-opacity-20 transition duration-300 rounded-full p-1.5 ml-4 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-9 md:w-9 h-7 w-7 hover:bg-gray-400 hover:bg-opacity-20 transition duration-300 rounded-full p-0.5 md:p-1.5 -mt-0.5 md:mt-0 md:ml-4 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                             </svg>
                                         </button>
                                     </form>
 
+                                    <!-- Save Item For Later -->
                                     <form action="{{ route('cart.switchToSaveForLater', $item->rowId) }}" method="POST">
                                         {{ csrf_field() }}
 
                                         <button type="submit">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-9 md:w-9 h-7 w-7 mt-3 hover:bg-gray-400 hover:bg-opacity-20 transition duration-300 rounded-full p-1.5 ml-4 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-9 md:w-9 h-7 w-7 hover:bg-gray-400 hover:bg-opacity-20 transition duration-300 rounded-full p-0.5 md:p-1.5 md:ml-4 md:mt-3 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                                             </svg>
                                         </button>
@@ -69,7 +70,7 @@
                     </tbody>
                 </table>
 
-                <div class="flex flex-col justify-between bg-white text-dblue rounded p-4 shadow-xl mt-5 mx-5">
+                <div class="flex flex-col justify-between bg-white text-dblue rounded p-4 shadow-xl mt-5 md:mx-5">
                     <div class="flex justify-between items-center border-b border-cgray mb-3 pb-2">
                         <p>Subtotal</p>
                         <p>{{ presentPrice(Cart::subtotal()) }}</p>
@@ -109,12 +110,12 @@
 
                 <div class="flex flex-col gap-y-2.5 md:flex-row justify-between items-center mt-5 mx-5">
                     @if (! session()->has('coupon'))
-                        <div class="mr-4">
+                        <div class="flex flex-col items-center mr-0 md:mr-4 md:block">
                             <p>Add A Copoun 🤓</p>
                             <form action="{{ route('coupon.store') }}" method="POST" class="mt-1.5">
                                 {{ csrf_field() }}
                                 
-                                <input type="text" name="code" class="rounded border-r-0 text-sm">
+                                <input type="text" name="code" class="rounded border-r-0 text-sm w-40 md:w-auto">
                                 <button  style="height: 38px" class="transform -translate-x-2 bg-dblue text-white inline-flex items-center justify-center p-2 text-sm rounded-tr rounded-br">Apply</button>
                             </form>
                         </div>

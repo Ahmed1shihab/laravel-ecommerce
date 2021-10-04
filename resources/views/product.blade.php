@@ -10,7 +10,7 @@
             </div>
 
             <div class="flex-grow-0 text-dblue mt-10 md:ml-20 md:block flex flex-col items-center">
-                <p class="text-3xl font-semibold">{!! $product->name !!}</p>
+                <p class="text-2xl text-center md:text-left md:text-3xl font-semibold">{!! $product->name !!}</p>
                 <div class="flex items-center mt-1">
                     @for ($i = 0; $i < 5; $i++)
                         <svg
@@ -27,11 +27,11 @@
 
                     <span class="text-xs ml-1">72 preview</span>
                 </div>
-                <div class="mt-2 font-semibold text-lg md:text-base">
+                <div class="mt-2 font-semibold text-base">
                     <span>{{ presentPrice($product->price) }}</span>
                 </div>
 
-                <p class="mt-4 text-lg md:text-base md:w-3/5 text-center md:text-left">
+                <p class="font-light md:font-normal mt-4 text-lg md:text-base md:w-3/5 text-center md:text-left">
                     {!! $product->description !!}
                 </p>
 
