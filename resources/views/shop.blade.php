@@ -14,7 +14,7 @@
 
 @section('content')
     <div class="flex flex-col md:flex-row md:items-center justify-between mx-7 md:mx-16 mt-14 text-dblue">
-        <div class="grid grid-cols-3 justify-items-center gap-y-2.5 md:block">
+        <div class="grid grid-cols-2 sm:grid-cols-3 justify-items-center gap-y-2.5 md:block">
             <a href="{{ route('shop.index') }}" class="hover:bg-opacity-10 p-2 rounded transition duration-300 hover:bg-gray-400 {{ !request()->category ? 'underline bg-gray-400 bg-opacity-10' : '' }}">All Products</a>
             @foreach ($categories as $category)
                 <a href="{{ route('shop.index', ['sort' => request()->sort, 'category' => $category->slug]) }}" class="hover:bg-opacity-10 p-2 rounded transition duration-300 hover:bg-gray-400 {{ setActiveCategory($category->slug) }}">{{ $category->name }}</a>

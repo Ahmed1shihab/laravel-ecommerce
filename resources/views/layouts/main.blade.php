@@ -28,9 +28,11 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                justify-content: center;
                 gap: 15px;
                 z-index: 49;
-                width: 100vh;
+                width: 100vw;
+                height: 100vh;
                 background: white;
                 left: 50%;
                 transform: translateX(-50%);
@@ -42,6 +44,11 @@
             }
             #mobile-stuff.open > div:last-of-type {
                 display: block;
+                margin-right: 0;
+            }
+            #mobile-stuff.open > div:last-of-type input {
+                margin-left: 0;
+                width: 270px;
             }
         }
     </style>
