@@ -25,7 +25,7 @@
                         </div>
                     </li>
                     <li class="mt-1">
-                        <div>User Can <span class="font-bold">Browse</span> Admin Panel</div>
+                        <div>User Can <span class="font-bold">Browse</span> <a href="/admin" class="text-blue-500 hover:text-blue-600 underline">Admin Panel</a></div>
                         <div class="font-mono">
                             <p>Email: user_admin@iq.com</p>
                             <p>Password: password</p>
