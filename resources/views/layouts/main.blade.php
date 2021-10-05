@@ -77,16 +77,16 @@
             />
         </a>
 
+        <!-- Navigation Links & Search Bar -->
         <div class="absolute md:static md:flex md:items-center" id="mobile-stuff">
-            <!-- Navigation Links -->
             <div class="hidden md:block md:ml-0 lg-40">
-                {{-- font-size: 16px; --}}
                 <ul class="flex md:flex-row flex-col gap-y-2.5 md:gap-0 items-center text-lg">
                     <li>
-                        {{-- margin-right: 15px; --}}
                         <a href="{{ route('landing-page') }}" class="hover:underline md:mr-5">Home</a>
                     </li>
-                    <li><a href="{{ route('shop.index') }}" class="hover:underline">Shop</a></li>
+                    <li>
+                        <a href="{{ route('shop.index') }}" class="hover:underline">Shop</a>
+                    </li>
                 </ul>
             </div>
     
@@ -104,11 +104,11 @@
 
         <div class="flex items-center gap-x-2.5 md:gap-x-0 text-base md:text-lg">
             @guest
-                <a href="{{ route('login') }}" class="hover:underline ml-0 sm:ml-16 md:ml-0 ">
+                <a href="{{ route('login') }}" class="hover:underline mr-3 sm:mr-16 md:mx-0">
                     Log in
                 </a>
             @else
-                <a href="{{ route('dashboard') }}" class="hover:underline ml-0 xl:ml-20 sm:ml-16">
+                <a href="{{ route('dashboard') }}" class="hover:underline sm:mr-16 md:mx-0">
                     Dashboard
                 </a>
             @endguest
@@ -144,7 +144,7 @@
 
     </header>
 
-    {{-- Errors and Success Messages --}}
+    <!-- Errors and Success Messages -->
     <div class="mt-3 mx-5 md:mx-16">
         @if (session()->has('success_message'))
             <div class="flex bg-green-100 rounded-lg p-4 mb-4">
@@ -174,7 +174,7 @@
     
     @yield('content')
 
-    {{-- Footer --}}
+    <!-- Footer -->
     <footer class="mt-10">
         <div
             class="
@@ -211,7 +211,7 @@
         </div>
     </footer>
 
-    {{-- JavaScript --}}
+    <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
     <script src="{{ asset('js/algolia.js') }}"></script>

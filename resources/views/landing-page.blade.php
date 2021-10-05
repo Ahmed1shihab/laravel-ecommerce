@@ -58,7 +58,7 @@
     <div class="mt-20 mx-4 flex flex-col items-center md:block">
         <h1 class="text-3xl md:text-left md:ml-10">Featured Products</h1>
         <!-- Card -->
-        <x-card :cardItems="$products" margin="mt-10 mx-10"></x-card>
+        <x-card :cardItems="$products" margin="mt-10 mx-4 md:mx-10"></x-card>
     </div>
 
 @endsection
